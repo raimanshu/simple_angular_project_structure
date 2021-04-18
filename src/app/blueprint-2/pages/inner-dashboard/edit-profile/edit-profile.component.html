@@ -1,0 +1,90 @@
+<app-loder-one *ngIf="loader"></app-loder-one>
+<div class="mx-2 my-2">
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Edit My Profile</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="my-profile-page">
+        <div class="container">
+            <form [formGroup]="editProfileForm" (ngSubmit)="submit()">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-4 d-flex justify-content-center">
+                        <div class="image-upload">
+                            <div class="user-profile">
+                                <!-- <img class="rounded-circle" src="./assets/images/dashboard/user-profile.png" alt="" > -->
+                                <img class="rounded-circle" [src]="(photoUrl == null || photoUrl == '') ?'./assets/images/dashboard/user-profile.png' : photoUrl" alt="">
+                                <div class="upload-logo-icon">
+                                    <button class="file-upload-button">
+                                        <input type="file" (change)="fileChangeEvent($event)" />
+                                        <span><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-8">
+                        <div class="user-details">
+                            <div class="row">
+                                <!-- <div class="col-6">
+                                    <h4>My Details</h4>
+                                </div> -->
+                                <!-- <div class="col-6 d-flex justify-content-end">
+                                    <a class="edit">Edit <i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                </div> -->
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <div class="user-heading">
+                                        <h5>Personal Information</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="row mx-2">
+                                    <div class="col-md-6 my-1">
+                                        <label for="">First Name</label>
+                                        <input formControlName="first_name" class="form-control" [ngClass]="{ 'is-invalid': (submitted || f.first_name.touched) && f.first_name.errors }">
+                                        <div *ngIf="(submitted || f.first_name.touched) && f.first_name.errors" class="invalid-feedback">
+                                            <div *ngIf="f.first_name.errors.required">First name is required</div>
+                                            <!-- <div *ngIf="f.old_password.errors.invalidEmail">Invalid email address</div> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 my-1">
+                                        <label for="">Last Name</label>
+                                        <input formControlName="last_name" class="form-control" [ngClass]="{ 'is-invalid': (submitted || f.last_name.touched) && f.last_name.errors }">
+                                        <div *ngIf="(submitted || f.last_name.touched) && f.last_name.errors" class="invalid-feedback">
+                                            <div *ngIf="f.last_name.errors.required">Last name is required</div>
+                                            <!-- <div *ngIf="f.old_password.errors.invalidEmail">Invalid email address</div> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 my-1">
+                                        <label for="">Email</label>
+                                        <input class="form-control" formControlName="email" readonly [ngClass]="{ 'is-invalid': (submitted || f.email.touched ) && f.email.errors }">
+                                        <div *ngIf="(submitted || f.email.touched) && f.email.errors" class="invalid-feedback">
+                                            <div *ngIf="f.email.errors.required">Email is required</div>
+                                            <!-- <div *ngIf="f.old_password.errors.invalidEmail">Invalid email address</div> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 my-1">
+                                        <label for="">Phone Number</label>
+                                        <input type="text" maxlength="10" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': (submitted || f.phone.touched) && f.phone.errors }">
+                                        <div *ngIf=" (submitted || f.phone.touched) && f.phone.errors" class="invalid-feedback">
+                                            <div *ngIf="f.phone.errors.required">Phone number is required</div>
+                                            <!-- <div *ngIf="f.old_password.errors.invalidEmail">Invalid email address</div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-12 col-md-12 text-left my-2">
+                            <button class="btn btn-primary" type="submit"> Save </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

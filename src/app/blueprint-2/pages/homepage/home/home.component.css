@@ -1,0 +1,11 @@
+li a:hover {
+    cursor: pointer;
+}
+
+.ipsum-active {
+    color: var(--blue) !important;
+}
+
+.buy-images img {
+    padding-top: 2px;
+}

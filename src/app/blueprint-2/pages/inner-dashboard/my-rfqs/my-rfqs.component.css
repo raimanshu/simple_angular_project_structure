@@ -1,0 +1,12 @@
+.accordion-body {
+    display: none;
+}
+
+label {
+    font-size: 20px;
+    color: #525253;
+}
+
+.filter-form .ng-select {
+    width: 100%;
+}

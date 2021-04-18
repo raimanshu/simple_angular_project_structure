@@ -1,0 +1,108 @@
+<div class="header">
+    <div class="header-nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-6 mobile-hide">
+                    <ul>
+                        <li><a href=""><i class="fa fa-envelope" aria-hidden="true"></i>info@demo.co.in</a></li>
+                        <li><a href=""><i class="fa fa-phone" aria-hidden="true"></i>8433218979</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 d-flex justify-content-end mobile-login-section">
+                    <div class="login-section">
+                        <ul>
+                            <li><a [routerLink]="externalLinks?.auth + '/' + externalLinks?.login" *ngIf="!userName"><i class="fa fa-user-circle-o" aria-hidden="true"></i>Login</a></li>
+                            <li><a [routerLink]="externalLinks?.Empty"><i class="fa fa-user-circle-o" aria-hidden="true" *ngIf="userName"></i>{{userName}}</a></li>
+                            <li><a [routerLink]="externalLinks?.auth + '/' + externalLinks?.signup" *ngIf="!userName">Register</a></li>
+                            <li><a (click)="logout()" *ngIf="userName">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="serach-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-sm-6 col-md-3">
+                    <div class="header-logo">
+                        <a href=""><img src="./assets/images/logo.png"></a>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-9">
+                    <div class="header-serach">
+                        <form [formGroup]="form" (ngSubmit)="searchKeyword()">
+                            <div class="search-form d-flex align-items-center justify-content-end">
+                                <div class="form-select">
+                                    <select placeholder="Aircraft parts" formControlName="list_type" >
+                                        <option value="airpart">Aircraft parts</option>
+                                        <option value="aircraft">Aircraft</option>
+                                    </select>
+                                </div>
+                                <div class="form-input">
+                                    <input class="input-field"  type="text" placeholder="Part Number" formControlName="keyword">
+                                </div>
+                                <div class="from-button">
+                                    <button class="search-button" type="submit" ><i class="fa fa-search"
+                                            aria-hidden="true"></i>Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="shop-notification">
+                        <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="mobile-menu-bar">
+                        <div class="menu-icon">
+                            <div class="icon">
+                                <div class="icon-type">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="header-serach mobile-search">
+                        <form>
+                            <div class="search-form d-flex align-items-center justify-content-end search-flex-mobile">
+                                <div class="form-select">
+                                    <select placeholder="Aircraft parts">
+                                        <option>Aircraft parts</option>
+                                        <option>Aircrafs</option>
+                                    </select>
+                                </div>
+                                <div class="form-input">
+                                    <input class="input-field" type="text" placeholder="Part Number">
+                                </div>
+                                <div class="from-button">
+                                    <button class="search-button" type="submit" ><i class="fa fa-search"
+                                            aria-hidden="true"></i>Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="backscreen"></div>
+    <div class="menu">
+        <div class="menu-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="text-center">
+                            <li><a [routerLink]="externalLinks?.Empty">Home</a></li>
+                            <li><a [routerLink]="externalLinks?.about">About Us</a></li>
+                            <li><a [routerLink]="externalLinks?.work">How It Works</a></li>
+                            <li><a [routerLink]="externalLinks?.subscription">Subscription</a></li>
+                            <li><a [routerLink]="externalLinks?.contact">Contact Us</a></li>
+                            <li><a [routerLink]="externalLinks?.RFQ">RFQ's</a></li>
+                            <li><a [routerLink]="externalLinks?.dashboard" *ngIf="userName">My Dashboard</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+.menu-bar ul li a{
+    cursor: pointer;
+}
+
+.form-select select {
+    background-color: #fff;
+}
+
+.form-input .input-field{
+    padding-left: 20px !important;
+}
+
+.form-input .input-field{
+    color: #000;
+}

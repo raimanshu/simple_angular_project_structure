@@ -1,0 +1,140 @@
+.upload-logo-icon {
+    position: absolute;
+    bottom: 31px;
+    left: 39%;
+}
+
+.my-profile-page .image-upload {
+    background: #f7f7f7;
+    padding: 20px;
+    border-radius: 50%;
+    width: 340px;
+    height: 340px;
+}
+
+.file-upload-button {
+    background-color: var(--blue);
+    border-radius: 50%;
+    height: 5rem;
+    overflow: hidden;
+    position: relative;
+    width: 5rem;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+
+.file-upload-button span {
+    position: relative;
+}
+
+.file-upload-button span:after {
+    position: absolute;
+    content: '';
+    top: 0px;
+    left: -16px;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+}
+
+.file-upload-button span:before {
+    position: absolute;
+    content: '';
+    top: -13px;
+    left: -2px;
+    width: 3px;
+    height: 30px;
+    background-color: #fff;
+}
+
+
+/* .file-upload-button:after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f095";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+} */
+
+input[type="file"] {
+    font-size: 100px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+}
+
+.file-info {
+    color: #999;
+    font-family: Lato;
+    margin-left: 0.5rem;
+}
+
+.my-profile-page .image-upload img {
+    height: 300px;
+    object-fit: fill;
+}
+
+@media (max-width:1199px) {
+    .my-profile-page .image-upload {
+        width: 288px;
+        height: 288px;
+    }
+    .my-profile-page .image-upload img {
+        height: 248px;
+    }
+    .file-upload-button {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+    .upload-logo-icon {
+        bottom: 110px;
+    }
+    .file-upload-button span:after {
+        width: 25px;
+        height: 1px;
+        left: -12px;
+    }
+    .file-upload-button span:before {
+        width: 1px;
+        height: 25px;
+        left: 0px;
+    }
+}
+
+@media (max-width:991px) {
+    .my-profile-page .image-upload {
+        width: 210px;
+        height: 210px;
+    }
+    .my-profile-page .image-upload img {
+        height: 170px;
+    }
+    .upload-logo-icon {
+        bottom: 47%;
+    }
+}
+
+@media (max-width:767px) {
+    .my-profile-page .image-upload {
+        width: 320px;
+        height: 320px;
+    }
+    .my-profile-page .image-upload img {
+        height: 280px;
+    }
+    .upload-logo-icon {
+        bottom: -4%;
+        left: 45%;
+    }
+}
+
+@media (max-width:364px) {
+    .upload-logo-icon {
+        left: 43%;
+    }
+}

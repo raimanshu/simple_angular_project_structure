@@ -1,7 +1,85 @@
-<app-header></app-header>
+<!-- <app-header></app-header>
 
 <router-outlet></router-outlet>
 
 <app-footer></app-footer>
 
-<app-side-nav></app-side-nav>
+<app-side-nav></app-side-nav> -->
+
+<div class="container">
+    <div class="text-center">
+        <h4>Angular project structure</h4>
+        <p class="text-danger bg-danger">This project is not for download purpose, just for reference</p>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h4><b class="text-uppercase">Blueprint 1 :</b>Reference -  https://github1s.com/mathisGarberg/angular-folder-structure/blob/HEAD/src/app/app.module.ts</h4>
+            <pre>
+                app(M,C)
+                        core(M)
+                        shared(M)
+                        layout(M)
+                        views(F)
+                        app.component.ts 
+                        app.component.html 
+                        app.component.scss 
+                        app.component.specs
+                        app.module.ts 
+                        app-routing.module.ts 
+            </pre>
+        </div>
+        <div class="col-sm-12">
+            <h4><b class="text-uppercase">Blueprint 2 :</b>  Parts and Planes </h4>
+            <pre>
+                app(M,C)
+                        core(M)
+                            config(F) - index.ts, router.config.ts
+                            const(F) - app.constants.ts, index.ts
+                            guards(F) - auth.guard.ts, guest.guard.ts
+                            interceptor(F) - auth.interceptor.ts, error.interceptor.ts
+                            service(F) - 
+                            shared(M)
+                                    shared-components(M)
+                                    directives(M) - credit-card.directive.ts, cvv-card.directive.ts, date-card.directive.ts
+                                    pipes(M)
+                            validator(F) - email.validator.ts, field-matcher.ts, no-whitespace.validator.ts
+                        pages(F)
+                            feature1(M+R)
+                            feature2(M+R)
+                        app.component.ts 
+                        app.component.html 
+                        app.component.scss 
+                        app.component.specs
+                        app.module.ts 
+                        app-routing.module.ts 
+            </pre>
+        </div>
+        <div class="col-sm-12">
+            <h4><b class="text-uppercase">Blueprint 3 :</b>Simplifize - Kitchen</h4>
+            <pre>
+                app(M,C)
+                        shared(M)
+                                shared-animations(M) 
+                                shared-components(M) 
+                                shared-directives(M)
+                                inmemory-db(F)
+                                models/typings(F)
+                                shared-pipes(M)
+                                services(M)
+                        views(F)
+                        app.component.ts 
+                        app.component.html 
+                        app.component.scss 
+                        app.component.specs
+                        app.module.ts 
+                        app-routing.module.ts 
+            </pre>
+            <div class="col-sm-12" style="height: 250px;width: auto;">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

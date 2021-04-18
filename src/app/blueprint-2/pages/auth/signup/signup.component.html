@@ -1,0 +1,146 @@
+<app-loder-one *ngIf="loader"></app-loder-one>
+<div class="singup-page section-padding">
+    <div class="container">
+        <div class="row">
+            <!-- <div class="col-12 d-flex justify-content-center">
+                <div class="from-logo">
+                    <img [routerLink]="externalLinks?.Empty" class="cursor-pointer" src="./assets/images/logo.png" alt="">
+                </div>
+            </div> -->
+            <div class="w-100 mt-5 mb-5">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-6 p-0 imges-first-login border-left-radius">
+                        <div class="login-back-image"></div>
+                        <div class="partsandplans_link">
+                            <a [routerLink]="externalLinks?.Empty">Welcome To PartsandPlanes.com</a>
+                        </div>
+                        <div class="auth-new-images">
+                            <img src="./assets/images/footerlogo.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 p-0">
+                        <div class="login-signup-from border-right-radius">
+                            <form [formGroup]="signupinfo" (ngSubmit)="onSignupForm()">
+                                <div class="row">
+                                    <div class="col-12 d-flex justify-content-center">
+                                        <h4>Register!</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group mb-1">
+                                            <label for="">Name</label>
+                                            <input type="text" class="form-control" formControlName="name" [ngClass]="{ 'is-invalid': (sub || f.name.touched) && f.name.errors }">
+                                            <div *ngIf="(sub || f.name.touched) && f.name.errors" class="invalid-feedback">
+                                                <div *ngIf="f.name.errors.required">Name is required</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group mb-1">
+                                            <label for="">Email</label>
+                                            <input type="text" class="form-control" formControlName="email" [ngClass]="{ 'is-invalid': (sub || f.email.touched) && f.email.errors }">
+                                            <div *ngIf="(sub || f.email.touched) && f.email.errors" class="invalid-feedback">
+                                                <div *ngIf="f.email.errors.required">Email is required</div>
+                                                <div *ngIf="f.email.errors.invalidEmail">Invalid email address</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-sm-12 col-md-6">
+                                        <div class="form-group mb-1">
+                                            <label for="">Country</label>
+                                            <ng-select [clearable]="false" [virtualScroll]="true" formControlName="country" (change)="courtyId($event)" [ngClass]="{ 'is-invalid': (sub || f.country.touched) && f.country.errors }">
+                                                <ng-option value="{{list.id}}" *ngFor="let list of coutry">{{list.country_name}}
+                                                </ng-option>
+                                            </ng-select>
+                                            <div *ngIf="(sub || f.country.touched) && f.country.errors" class="invalid-feedback">
+                                                <div *ngIf="f.country.errors.required">Country is required</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-md-6">
+                                        <div class="form-group mb-1">
+                                            <label for="">State</label>
+                                            <ng-select [clearable]="false" [virtualScroll]="true" formControlName="state" (change)="stateId($event)" [ngClass]="{ 'is-invalid': (sub || f.state.touched) && f.state.errors }">
+                                                <ng-option value="{{list.id}}" *ngFor="let list of states">{{list.name}}
+                                                </ng-option>
+                                            </ng-select>
+                                            <div *ngIf="(sub || f.state.touched) && f.state.errors" class="invalid-feedback">
+                                                <div *ngIf="f.state.errors.required">State is required</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-sm-12 col-md-12">
+                                        <div class="form-group mb-1">
+                                            <label for="">City</label>
+                                            <ng-select [clearable]="false" [virtualScroll]="true" formControlName="city" [ngClass]="{ 'is-invalid': (sub || f.city.touched) && f.city.errors }">
+                                                <ng-option value="{{list.id}}" *ngFor="let list of city">{{list.name}}
+                                                </ng-option>
+                                            </ng-select>
+                                            <div *ngIf="(sub || f.city.touched) && f.city.errors" class="invalid-feedback">
+                                                <div *ngIf="f.city.errors.required">City is required</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="">Password</label>
+                                            <input type="password" class="form-control" formControlName="password" [ngClass]="{ 'is-invalid':(sub || f.password.touched) && f.password.errors }">
+                                            <div *ngIf="(sub || f.password.touched) && f.password.errors" class="invalid-feedback">
+                                                <div *ngIf="f.password.errors.required">Password is required</div>
+                                                <div *ngIf="f.password.errors.minlength">Password should have at least 8 characters long!</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="">Repeat Password</label>
+                                            <input type="password" class="form-control" formControlName="confirmPassword" [ngClass]="{ 'is-invalid':(sub || f.confirmPassword.touched) && f.confirmPassword.errors }">
+                                            <div *ngIf="(sub || f.confirmPassword.touched) && f.confirmPassword.errors" class="invalid-feedback">
+                                                <div *ngIf="f.confirmPassword.errors.required">Please repeat password!</div>
+                                                <div *ngIf="f.confirmPassword.errors.mustMatch">Password don't match</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <button type="submit" class="btn form-control">REGISTER</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 d-flex justify-content-end">
+                                        <p class="mt-1">Are you an Existing Member? <a (click)="loginRute()">Login</a></p>
+                                    </div>
+                                    <!-- <div class="col-12 d-flex justify-content-center">
+                                        <h5>Or</h5>
+                                    </div>
+                                    <div class="col-12 d-flex justify-content-center social_media">
+                                        <ul>
+                                            <li>
+                                                <a><img src="./assets/images/facebook.svg" alt=""></a>
+                                            </li>
+                                            <li>
+                                                <a><img src="./assets/images/google.svg" alt=""></a>
+                                            </li>
+                                        </ul>
+                                    </div> -->
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

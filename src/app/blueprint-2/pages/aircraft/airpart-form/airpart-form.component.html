@@ -1,0 +1,230 @@
+<div class="w-100">
+    <div class="images-slider-threee">
+        <img src="./assets/images/slider.jpg" alt="">
+        <div class="slider-three-para">
+            <div class="container-fuild">
+                <h4>Fully automate your Aircraft parts sourcing</h4>
+            </div>
+            <div class="container">
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container section-padding">
+    <div class="row">
+        <div class="col-12">
+            <!-- p-0 -->
+            <div class="aircraft-form">
+                <form [formGroup]="airPartsForm" (ngSubmit)="submitAirPartsForm()">
+                    <div class="compony-table">
+                        <div class="compony-table-first">
+                            <label for="">Aircraft Type<span>*</span></label>
+                        </div>
+                        <div class="compony-table-second">
+                            <ng-select [clearable]="false" [virtualScroll]="true" formControlName="aircraft_type" [ngClass]="{ 'is-invalid': (submitted || f.aircraft_type.touched) && f.aircraft_type.errors }">
+                                <ng-option value="" disabled selected>Type or Select</ng-option>
+                                <ng-option value="{{list.id}}" *ngFor="let list of aircraftType">
+                                    {{list.name}}
+                                </ng-option>
+                            </ng-select>
+                            <div *ngIf="(submitted || f.aircraft_type.touched) && f.aircraft_type.errors" class="invalid-feedback">
+                                <div *ngIf="f.aircraft_type.errors.required">Aircraft type is required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="compony-table">
+                        <div class="compony-table-first">
+                            <label for="">Part Number<span>*</span></label>
+                        </div>
+                        <div class="compony-table-second">
+                            <input type="text" class="py-4 form-control" formControlName="part_number" [ngClass]="{ 'is-invalid': (submitted || f.part_number.touched) && f.part_number.errors }">
+                            <div *ngIf="(submitted || f.part_number.touched) && f.part_number.errors" class="invalid-feedback">
+                                <div *ngIf="f.part_number.errors.required">Part Number is required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="compony-table">
+                        <div class="compony-table-first">
+                            <label for="">Name<span>*</span></label>
+                        </div>
+                        <div class="compony-table-second">
+                            <input type="text" class="py-4 form-control" formControlName="name" [ngClass]="{ 'is-invalid': (submitted || f.name.touched) && f.name.errors }">
+                            <div *ngIf="(submitted || f.name.touched) && f.name.errors" class="invalid-feedback">
+                                <div *ngIf="f.name.errors.required">Name is required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="compony-table">
+                        <div class="compony-table-first">
+                            <label for="">Email<span>*</span></label>
+                        </div>
+                        <div class="compony-table-second">
+                            <input type="text" class="py-4 form-control" formControlName="email" readonly [ngClass]="{ 'is-invalid': (submitted || f.email.touched) && f.email.errors }">
+                            <div *ngIf="(submitted || f.email.touched) && f.email.errors" class="invalid-feedback">
+                                <div *ngIf="f.email.errors.required">Email is required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-6">
+                            <div class="compony-table">
+                                <div class="compony-table-first compony-table-third">
+                                    <label for="">Quantity<span>*</span></label>
+                                </div>
+                                <div class="compony-table-second compony-table-four">
+                                    <input type="text" class="py-4 form-control" formControlName="quantity" [ngClass]="{ 'is-invalid': (submitted || f.quantity.touched) && f.quantity.errors }">
+                                    <div *ngIf="(submitted || f.quantity.touched) && f.quantity.errors" class="invalid-feedback">
+                                        <div *ngIf="f.quantity.errors.required">Quantity is required</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6">
+                            <div class="compony-table">
+                                <div class="compony-table-first compony-table-third">
+                                    <label for="">Alt Part No.</label>
+                                </div>
+                                <div class="compony-table-second compony-table-four">
+                                    <input type="text" class="py-4 form-control" formControlName="alt_part_number">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-6">
+                            <div class="compony-table">
+                                <div class="compony-table-first compony-table-third">
+                                    <label for="">Condition Code<span>*</span></label>
+                                </div>
+                                <div class="compony-table-second compony-table-four">
+                                    <ng-select [clearable]="false" [virtualScroll]="true" formControlName="condition_code" [ngClass]="{ 'is-invalid': (submitted || f.condition_code.touched) && f.condition_code.errors }">
+                                        <ng-option value="" disabled selected>Type or Select</ng-option>
+                                        <ng-option value="{{list.id}}" *ngFor="let list of conditionCode">
+                                            {{list.name}}
+                                        </ng-option>
+                                    </ng-select>
+                                    <div *ngIf="(submitted || f.condition_code.touched) && f.condition_code.errors" class="invalid-feedback">
+                                        <div *ngIf="f.condition_code.errors.required">Condition code is required</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6">
+                            <div class="compony-table">
+                                <div class="compony-table-first compony-table-third">
+                                    <label for="">UoM</label>
+                                </div>
+                                <div class="compony-table-second compony-table-four">
+                                    <ng-select [clearable]="false" [virtualScroll]="true" formControlName="uom">
+                                        <!-- <ng-option value="" disabled selected>Type or Select</ng-option> -->
+                                        <ng-option value="{{list.id}}" *ngFor="let list of stateList">
+                                            {{list.state_name}}
+                                        </ng-option>
+                                    </ng-select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-6">
+                            <div class="compony-table">
+                                <div class="compony-table-first compony-table-third">
+                                    <label for="">Engine Type</label>
+                                </div>
+                                <div class="compony-table-second compony-table-four">
+                                    <input type="text" class="py-4 form-control" formControlName="engine_type">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6">
+                            <div class="compony-table">
+                                <div class="compony-table-first compony-table-third">
+                                    <label for="">NSN</label>
+                                </div>
+                                <div class="compony-table-second compony-table-four">
+                                    <input type="text" class="py-4 form-control" formControlName="nsn">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="compony-table">
+                        <div class="compony-table-five">
+                            <label for="">List Price</label>
+                            <div class="form-check-inline">
+                                <!-- <label class="form-check-label" for="radio3">
+                                    <input type="checkbox" class="form-check-input ml-3 mr-2" id="radio3"
+                                        value="for sale">For Sale
+                                </label> -->
+                            </div>
+                        </div>
+                        <div class="compony-table-six">
+                            <input type="text" class="py-4 form-control" formControlName="list_price">
+                        </div>
+                        <div class="compony-table-seven">
+                            <div class="compony-table-eight">
+                                <ng-select [clearable]="false" [virtualScroll]="true" formControlName="pricelist">
+                                    <ng-option selected value="{{list.id}}" *ngFor="let list of pricelist">
+                                        {{list.name}}
+                                    </ng-option>
+                                </ng-select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-6">
+                            <div class="compony-table">
+                                <div class="compony-table-first compony-table-third">
+                                    <label for="">Certs</label>
+                                </div>
+                                <div class="compony-table-second compony-table-four">
+                                    <input type="text" class="py-4 form-control" formControlName="cert">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6">
+                            <div class="compony-table">
+                                <div class="compony-table-first compony-table-third">
+                                    <label for="">Cage Code</label>
+                                </div>
+                                <div class="compony-table-second compony-table-four">
+                                    <input type="text" class="py-4 form-control" formControlName="cage_code">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="compony-table">
+                        <div class="compony-table-first">
+                            <label for="">Location</label>
+                        </div>
+                        <div class="compony-table-second">
+                            <input type="text" class="py-4 form-control" formControlName="location">
+                        </div>
+                    </div>
+                    <div class="compony-table">
+                        <div class="compony-table-first">
+                            <label for="">Description</label>
+                        </div>
+                        <div class="compony-table-second">
+                            <textarea type="text" class="form-control" rows="8" formControlName="description"></textarea>
+                        </div>
+                    </div>
+                    <div class="W-100 mt-5 text-center">
+                        <button class="compony-button">Done With Airparts Information</button>
+                    </div>
+                </form>
+            </div>
+            <!-- <div class="accordion-heding d-flex justify-content-between">
+                <h4 class="m-0">Enter Airparts Information</h4>
+                <p class="m-0"><i class="fa fa-angle-down" aria-hidden="true"></i></p>
+            </div>
+            <div class="accordion-body">
+                <div class="row">
+                    <div class="col-12">
+                       
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>

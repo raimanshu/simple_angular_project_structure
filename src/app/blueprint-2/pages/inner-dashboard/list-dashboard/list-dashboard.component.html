@@ -1,0 +1,59 @@
+<app-common-slide></app-common-slide>
+
+<div class="inner-dashboard">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="dashboard-menu-bar">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-4">
+                            <div class="dashboard-link">
+                                <div class="cursor-pointer d-flex align-items-end dashboard-border-right" [routerLink]="externalLinks?.myprofile">
+                                    <img src="./assets/images/dashboard/d1.svg" alt="">
+                                    <h4 class="m-0 ml-3">My Profile</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4">
+                            <div class="dashboard-link">
+                                <div class="cursor-pointer d-flex align-items-end dashboard-border-right" [routerLink]="externalLinks?.myrfqs">
+                                    <img src="./assets/images/dashboard/d2.svg" alt="">
+                                    <h4 class="m-0 ml-3">My RFQ’s</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4">
+                            <div class="dashboard-link">
+                                <div class="cursor-pointer d-flex align-items-end" [routerLink]="externalLinks?.My_quotes">
+                                    <img src="./assets/images/dashboard/d3.svg" alt="">
+                                    <h4 class="m-0 ml-3">My Quotes</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12 col-sm-12 col-md-6">
+                            <div class="dashboard-link">
+                                <div class="cursor-pointer d-flex align-items-end justify-content-end dashboard-border-right dashboard-menu-padding" [routerLink]="externalLinks?.histroy">
+                                    <img src="./assets/images/dashboard/d4.svg" alt="">
+                                    <h4 class="m-0 ml-3">Purchase History</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6">
+                            <div class="dashboard-link">
+                                <div class="cursor-pointer d-flex align-items-end" [routerLink]="externalLinks?.seller">
+                                    <img src="./assets/images/dashboard/d5.svg" alt="">
+                                    <h4 class="m-0 ml-3"> {{hasCompany ? 'Company Details' : 'Become A Seller'}}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="w-100 section-padding">
+    <router-outlet></router-outlet>
+</div>

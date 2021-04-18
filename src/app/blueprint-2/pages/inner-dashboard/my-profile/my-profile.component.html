@@ -1,0 +1,74 @@
+<app-loder-one *ngIf="loader"></app-loder-one>
+<div class="container">
+    <div class="row">
+        <div class="section-heading mb-5">
+            <h4><span>
+                My Profile
+            </span>
+            </h4>
+        </div>
+    </div>
+</div>
+<div class="my-profile-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-4 mt-2 d-flex justify-content-center">
+                <div class="image-upload">
+                    <div class="user-profile">
+                        <img class="rounded-circle" [src]="(photoUrl == null || photoUrl == '') ?'./assets/images/dashboard/user-profile.png' : photoUrl" alt="">
+                        <div class="upload-logo-icon">
+                            <button class="file-upload-button">
+                                <input type="file" name="myfile"
+                                (change)="handleFileInput($event)"
+                                />
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-8 mt-2">
+                <div class="user-details">
+                    <div class="row">
+                        <div class="col-6">
+                            <h4>My Details</h4>
+                        </div>
+                        <div class="col-6 d-flex justify-content-end">
+                            <a class="edit" (click)="editProfile()">Edit <i class="fa fa-pencil" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <div class="user-heading">
+                                <h5>Personal Information</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-12 col-sm-6">
+                            <div class="left-text">
+                                <p>Name</p>
+                                <!-- <p>Last Name</p> -->
+                                <p>Phone</p>
+                                <p>Email</p>
+                                <p *ngIf="profileDetails?.company?.company_name">Company Name</p>
+                                <p>Password</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="right-text">
+                                <p>{{profileDetails?.first_name == null ? '-' : profileDetails?.first_name}} {{profileDetails?.last_name == null ? '' : profileDetails?.last_name}} </p>
+                                <!-- <p>{{profileDetails?.last_name == null ? '-' : profileDetails?.last_name}}</p>  -->
+                                <p>{{profileDetails?.phone == null ? '-' : profileDetails?.phone}}</p>
+                                <p>{{profileDetails?.email == null ? '-' : profileDetails?.email}}</p>
+                                <p *ngIf="profileDetails?.company?.company_name">{{profileDetails?.company?.company_name == null ? '-' : profileDetails?.company?.company_name}}</p>
+                                <p>*******</p>
+                                <a (click)="changePassword()">Change password</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

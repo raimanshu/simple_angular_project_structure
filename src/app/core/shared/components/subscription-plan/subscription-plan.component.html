@@ -1,0 +1,107 @@
+<app-loder-one *ngIf="loader"></app-loder-one>
+<div class="plans-types w-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3 mt-2 subscription-custom-padding" *ngFor="let plans of plansList">
+                <div class="plan-box w-100">
+                    <div class="plan-heading text-center">
+                        <h3>{{plans.plan_name}}</h3>
+                    </div>
+                    <div class="plan-price text-center ">
+                        <div class="border-bottom">
+                            <span>{{plans.per_list}}{{plans.price}}</span>
+                            <p>For {{plans.duration}} {{plans.duration_unit}}*</p>
+                            <p *ngIf="plans.plan_name == 'Free'">*(Thereafter you will be subscribed to Basic Plan)</p>
+                        </div>
+                    </div>
+                    <div class="bottom-txt">
+                        <div class="plan-all-type w-100 text-center">
+                            <ul>
+                                <!-- <li>{{plans.plan_description}}</li> -->
+                                <!-- <li>Lorem Ipsum</li> -->
+                            </ul>
+                        </div>
+                        <div class="subscribed-button text-center">
+                            <a href="">SUBSCRIBE NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-12 col-sm-12 col-md-4 col-lg-3 mt-2 subscription-custom-padding">
+                <div class="plan-box w-100">
+                    <div class="plan-heading text-center">
+                        <h3>Basic</h3>
+                    </div>
+                    <div class="plan-price text-center  ">
+                        <div class="border-bottom">
+                            <span>$1</span>
+                            <p>For 1 months</p>
+                        </div>
+                    </div>
+                    <div class="bottom-txt">
+                        <div class="plan-all-type w-100 text-center">
+                            <ul>
+                                <li>Lorem Ipsum</li>
+                                <li>Lorem Ipsum</li>
+                            </ul>
+                        </div>
+                        <div class="subscribed-button text-center">
+                            <a href="">SUBSCRIBE NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3 mt-2 subscription-custom-padding">
+                <div class="plan-box w-100">
+                    <div class="plan-heading text-center">
+                        <h3>Silver</h3>
+                    </div>
+                    <div class="plan-price text-center ">
+                        <div class="border-bottom">
+                            <span>$5</span>
+                            <p>For 6 months</p>
+                        </div>
+                    </div>
+                    <div class="bottom-txt">
+                        <div class="plan-all-type w-100 text-center">
+                            <ul>
+                                <li>Lorem Ipsum</li>
+                                <li>Lorem Ipsum</li>
+                                <li>Lorem Ipsum</li>
+                            </ul>
+                        </div>
+                        <div class="subscribed-button text-center">
+                            <a href="">SUBSCRIBE NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3 mt-2 subscription-custom-padding">
+                <div class="plan-box w-100">
+                    <div class="plan-heading text-center">
+                        <h3>Gold</h3>
+                    </div>
+                    <div class="plan-price text-center  ">
+                        <div class="border-bottom">
+                            <span>$10</span>
+                            <p>For 1 year</p>
+                        </div>
+                    </div>
+                    <div class="bottom-txt">
+                        <div class="plan-all-type w-100 text-center">
+                            <ul>
+                                <li>Lorem Ipsum</li>
+                                <li>Lorem Ipsum</li>
+                                <li>Lorem Ipsum</li>
+                                <li>Lorem Ipsum</li>
+                            </ul>
+                        </div>
+                        <div class="subscribed-button text-center">
+                            <a href="">SUBSCRIBE NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>

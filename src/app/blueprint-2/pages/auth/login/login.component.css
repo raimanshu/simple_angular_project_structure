@@ -1,0 +1,41 @@
+.login-back-image {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.auth-new-images {
+    position: absolute;
+    z-index: 1;
+    top: 23%;
+    left: 7%;
+}
+
+@media (max-width:767px) {
+    .login-back-image {
+        height: 470px;
+        position: relative;
+        overflow: hidden;
+    }
+}
+
+@media (max-width:421px) {
+    .login-back-image {
+        height: 400px;
+    }
+    .auth-new-images {
+        top: 35%;
+    }
+}

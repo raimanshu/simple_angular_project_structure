@@ -1,0 +1,51 @@
+<div class="w-100">
+    <div class="images-slider-four">
+        <img src="./assets/images/slider.jpg" alt="">
+    </div>
+</div>
+<div class="listed-listing-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="listed-button">
+                    <a class="mr-3">Listed Sellers</a>
+                    <a>ebay</a>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div>
+                <p *ngIf="productList.length == 0" class="no_records">*No Records found</p>
+            </div>
+            <!-- this is product list{{productList | json}} -->
+            
+            <div class="col-12" *ngFor="let list of productList">
+                <div class="listing-section border">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-4">
+                            <img src="./assets/images/t4.jpg" alt="">
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-8">
+                            <div class="paragraph">
+                                <!-- <h4>2000 Bowman Chrome Refractor Tom Brady ROOKIE RC #236 PSA 9 MINT</h4> -->
+                                <h4>{{list.description}}</h4>
+                                <div class="w-100 mt-4">
+                                    <span class="mr-5"><i class="fa fa-map-marker mr-2" aria-hidden="true"></i>London,
+                                        Uk</span><span><i class="fa fa-money mr-2"
+                                            aria-hidden="true"></i>USD15,000</span>
+                                </div>
+                                <div class="para-button mt-5">
+                                    <a class="mr-3">View<i class="fa fa-eye ml-2" aria-hidden="true"></i></a><a>Add to
+                                        RFQ’s <i class="fa fa-shopping-cart ml-2" aria-hidden="true"></i></a>
+                                </div>
+                                <div class="ebay-icon text-right">
+                                    <img src="./assets/images/ebay.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

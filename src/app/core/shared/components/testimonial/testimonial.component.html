@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <!-- <carousel [images]="images" [loop]="true" [arrowsOutside]="true"  [objectFit]="'cover'"
+        [autoplay]="true"
+        [dots]="true">
+        </carousel> -->
+        <div class="col-md-12">
+            <owl-carousel-o [options]="customOptions" class="carousel-main">
+                <!-- <ng-container *ngFor="let slide of images">
+                    <ng-template carouselSlide [id]="slide.id">
+                        [title]="slide.title"
+                        <img [src]="slide.path" [alt]="slide.path">
+                    </ng-template>
+                </ng-container> -->
+                <ng-container *ngFor="let slide of images">
+                    <ng-template carouselSlide [id]="slide.id">
+                        <img [src]="slide.image_url" [alt]="slide.image_url">
+                    </ng-template>
+                </ng-container>
+            </owl-carousel-o>
+        </div>
+    </div>
+</div>

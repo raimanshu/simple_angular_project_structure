@@ -1,0 +1,275 @@
+<app-loder-one *ngIf="loader"></app-loder-one>
+<div class="home-slider">
+    <img src="./assets/images/slider.jpg">
+    <div class="home-slider-para">
+        <div class="container">
+            <h4>Fully automate your Aircraft parts sourcing</h4>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it</p>
+        </div>
+    </div>
+</div>
+<div class="home-part-buy">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 mt-3 col-lg-3 px-1 buy-part-padding-mobile">
+                <div class="buy-part px-2 py-4">
+                    <div class="d-flex py-3 justify-content-center">
+                        <div class="buy-images">
+                            <img class="" src="./assets/images/p1.png">
+                        </div>
+                    </div>
+                    <h4>Buy Airparts</h4>
+                    <p>dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it ...
+                    </p>
+                    <div class="buy-button">
+                        <a [routerLink]="externalLinks?.listed">View Details <i class="fa fa-angle-double-right"
+                                aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 mt-3 col-lg-3 px-1 buy-part-padding-mobile">
+                <div class="buy-part px-2 py-4">
+                    <div class="d-flex py-3 justify-content-center">
+                        <div class="buy-images">
+                            <img class="" src="./assets/images/p2.png">
+                        </div>
+                    </div>
+                    <h4>Sell Airparts</h4>
+                    <p>dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it ...
+                    </p>
+                    <div class="buy-button">
+                        <a [routerLink]="externalLinks?.form + '/' + externalLinks?.Airpart">View Details <i
+                                class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 mt-3 col-lg-3 px-1 buy-part-padding-mobile">
+                <div class="buy-part px-2 py-4">
+                    <div class="d-flex py-3 justify-content-center">
+                        <div class="buy-images">
+                            <img class="mt-4" src="./assets/images/p3.png">
+                        </div>
+                    </div>
+                    <h4>Buy Aircraft</h4>
+                    <p>dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it ...
+                    </p>
+                    <div class="buy-button">
+                        <a [routerLink]="externalLinks?.listed">View Details <i class="fa fa-angle-double-right"
+                                aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 mt-3 col-lg-3 px-1 buy-part-padding-mobile">
+                <div class="buy-part px-2 py-4">
+                    <div class="d-flex py-3 justify-content-center">
+                        <div class="buy-images">
+                            <img class="" src="./assets/images/p4.png">
+                        </div>
+                    </div>
+                    <h4>Sell Aircraft</h4>
+                    <p>dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it ...
+                    </p>
+                    <div class="buy-button">
+                        <a [routerLink]="externalLinks?.form + '/' + externalLinks?.Aircraft">View Details <i
+                                class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="Airparts-section section-padding">
+    <div class="section-heading mb-5">
+        <h4><span>
+                Lorem Ipsum
+            </span>
+        </h4>
+    </div>
+    <div class="ipsum-types mb-5">
+        <ul>
+            <li><a id="all" (click)="airpartList('all')" [ngClass]="all ? 'ipsum-active' : ''">All</a></li>
+            <li><a id="airpart" (click)="airpartList('airpart')" [ngClass]="airpart ? 'ipsum-active' : ''">Aircraft Parts</a></li>
+            <li><a id="aircraft" (click)="airpartList('aircraft')" [ngClass]="aircraft ? 'ipsum-active' : ''">Aircraft</a></li>
+        </ul>
+    </div>
+    <div class="ipsum-part w-100">
+        <div class="container">
+            <!-- <div class="ipsum-part-box mt-3" *ngFor="let list of lists"> -->
+            <ng-container *ngFor="let list of lists; let i = index">
+                <ng-container *ngIf="i<4">
+                    <ng-container *ngIf="i%2 != 0">
+                        <div class="ipsum-part-box mt-3">
+                            <div class="row">
+                                <div class="col-12 col-sm-12 col-md-5 col-lg-5 mt-3 p-0 ipsum-part-padding">
+                                    <!-- <img src="./assets/images/ip1.jpg"> -->
+                                    <!-- <img [src]="list.image_url"> -->
+                                    <img [src]="showImages(list)">
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-7 col-lg-7 mt-3 p-0 ipsum-part-padding custom-border-right">
+                                    <div class=" w-100 ipsum-part-box-padding">
+                                        <!-- <h4>Featured</h4>
+                                        <h5>Boeing Citation Mustang</h5>
+                                        <p>Lorem ipsum dolor sit amet, consectetur tempor adipiscing elit, sed do eiusmod
+                                            tempor sed do eiusmod tempor incididunt. Ipsu do eiusmod tempor sed do eiusmod
+                                            tempor incididunt cod tempor sed do eiusmod tempor incididunt.</p> -->
+                                        <h4>{{list.name}}</h4>
+                                        <h5>{{list.manufacture}}</h5>
+                                        <p>{{list.description}}</p>
+                                        <p class="ipsum-para"><span>Added:</span> {{ list.created_at ? transformDate(list.created_at) : '' }} </p>
+                                        <div class="transparet-button w-100 text-right">
+                                            <a href="">View Details <i class="fa fa-angle-double-right"
+                                                    aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="i%2 == 0">
+                        <div class="ipsum-part-box mt-3">
+                            <div class="row">
+                                <div class="col-12 col-sm-12 col-md-7 col-lg-7 mt-3 p-0 ipsum-part-padding custom-border-left">
+                                    <div class="w-100 ipsum-part-box-padding">
+                                        <!-- <h4>Featured</h4>
+                                        <h5>Boeing Citation Mustang</h5>
+                                        <p>Lorem ipsum dolor sit amet, consectetur tempor adipiscing elit, sed do eiusmod
+                                            tempor sed do eiusmod tempor incididunt. Ipsu do eiusmod tempor sed do eiusmod
+                                            tempor incididunt cod tempor sed do eiusmod tempor incididunt.</p>
+                                        <p class="ipsum-para"><span>Added:</span> June 15, 2017</p>
+                                        <div class="transparet-button w-100 text-right">
+                                            <a href="">View Details <i class="fa fa-angle-double-right"
+                                                    aria-hidden="true"></i></a>
+                                        </div> -->
+                                        <h4>{{list.description}}</h4>
+                                        <h5>{{list.description}}</h5>
+                                        <p>{{list.description}}</p>
+                                        <p class="ipsum-para"><span>Added:</span> {{ list.created_at ? transformDate(list.created_at) : '' }}</p>
+                                        <div class="transparet-button w-100 text-right">
+                                            <a href="">View Details <i class="fa fa-angle-double-right"
+                                                    aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-5 col-lg-5 mt-3 ipsum-part-padding p-0">
+                                    <!-- <img src="./assets/images/ip2.jpg"> -->
+                                    <!-- <img [src]="list.image_url"> -->
+                                    <img [src]="showImages(list)">
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                </ng-container>
+            </ng-container>
+            <!-- <div class="ipsum-part-box mt-3">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                        <img src="./assets/images/ip1.jpg">
+
+                        <img [src]="list.image_url">
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-7 col-lg-7 mt-3">
+                        <div class="custom-border-right w-100 px-3">
+                            <h4>Featured</h4>
+                            <h5>Boeing Citation Mustang</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur tempor adipiscing elit, sed do eiusmod tempor sed
+                                do eiusmod tempor incididunt. Ipsu do eiusmod tempor sed do eiusmod tempor incididunt
+                                cod tempor sed do eiusmod tempor incididunt.</p>
+
+                            <h4>{{list.description}}</h4>
+                            <h5>{{list.description}}</h5>
+                            <p>{{list.description}}</p>
+                            <p class="ipsum-para"><span>Added:</span> June 15, 2017</p>
+                            <div class="transparet-button w-100 text-right">
+                                <a href="">View Details <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <div class="ipsum-part-box mt-3">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-7 col-lg-7 mt-3">
+                        <div class="custom-border-left w-100 px-3">
+                            <h4>Featured</h4>
+                            <h5>Boeing Citation Mustang</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur tempor adipiscing elit, sed do eiusmod tempor sed
+                                do eiusmod tempor incididunt. Ipsu do eiusmod tempor sed do eiusmod tempor incididunt
+                                cod tempor sed do eiusmod tempor incididunt.</p>
+                            <p class="ipsum-para"><span>Added:</span> June 15, 2017</p>
+                            <div class="transparet-button w-100 text-right">
+                                <a href="">View Details <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                        <img src="./assets/images/ip2.jpg">
+                    </div>
+                </div>
+            </div> -->
+            <!-- <div class="ipsum-part-box mt-3">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                        <img src="./assets/images/ip3.jpg">
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-7 col-lg-7 mt-3">
+                        <div class="custom-border-right w-100 px-3">
+                            <h4>Featured</h4>
+                            <h5>Boeing Citation Mustang</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur tempor adipiscing elit, sed do eiusmod tempor sed do eiusmod tempor incididunt. Ipsu do eiusmod tempor sed do eiusmod tempor incididunt cod tempor sed do eiusmod tempor incididunt.</p>
+                            <p class="ipsum-para"><span>Added:</span> June 15, 2017</p>
+                            <div class="transparet-button w-100 text-right">
+                                <a href="">View Details <i class="fa fa-angle-double-right"
+                                        aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ipsum-part-box mt-3">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-7 col-lg-7 mt-3">
+                        <div class="custom-border-left w-100 px-3">
+                            <h4>Featured</h4>
+                            <h5>Boeing Citation Mustang</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur tempor adipiscing elit, sed do eiusmod tempor sed do eiusmod tempor incididunt. Ipsu do eiusmod tempor sed do eiusmod tempor incididunt cod tempor sed do eiusmod tempor incididunt.</p>
+                            <p class="ipsum-para"><span>Added:</span> June 15, 2017</p>
+                            <div class="transparet-button w-100 text-right">
+                                <a href="">View Details <i class="fa fa-angle-double-right"
+                                        aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                        <img src="./assets/images/ip4.jpg">
+                    </div>
+                </div>
+            </div> -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="ipsum-part-button text-center mt-5">
+                        <a href="">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="testimonial w-100 section-padding">
+        <div class="section-heading mb-5">
+            <h4><span>
+                    Lorem Ipsum
+                </span>
+            </h4>
+        </div>
+        <app-testimonial></app-testimonial>
+    </div>
+    <div class="choose-plan w-100 section-padding pt-0">
+        <div class="section-heading mb-5">
+            <h4><span>
+                    Choose Your Plan!
+                </span>
+            </h4>
+        </div>
+        <app-subscription-plan></app-subscription-plan>
+    </div>
+</div>

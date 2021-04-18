@@ -1,0 +1,109 @@
+<div class="container">
+    <div class="row">
+        <div class="section-heading mb-5">
+            <h4><span>
+                    Purchase Details
+                </span>
+            </h4>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row border-bottom">
+        <div class="col-12 col-sm-12 col-md-12 px-0">
+            <h3 class="border-after-class mb-4">Payment History</h3>
+        </div>
+    </div>
+    <div class="purchase-searching">
+        <div class="purchase-first">
+            <div class="w-100">
+                <div class="purchase-secound">
+                    <label for="" class="mr-2">show:</label>
+                    <ng-select [clearable]="false" [virtualScroll]="true">
+                        <ng-option value="{{list.number}}" *ngFor="let list of stateList">
+                            {{list.number}}
+                        </ng-option>
+                    </ng-select>
+                </div>
+                <div class="purchase-secound">
+                    <label for="" class="mr-2">search:</label>
+                    <input type="text">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="purchase-history-table w-100">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Package Name</th>
+                        <th>Price</th>
+                        <th>Date</th>
+                        <th>Valid Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Free</td>
+                        <td>USD 0</td>
+                        <td>03 Feb 2021</td>
+                        <td>03 jun 2021</td>
+                    </tr>
+                    <tr>
+                        <td>Free</td>
+                        <td>USD 0</td>
+                        <td>03 Feb 2021</td>
+                        <td>03 jun 2021</td>
+                    </tr>
+                    <tr>
+                        <td>Free</td>
+                        <td>USD 0</td>
+                        <td>03 Feb 2021</td>
+                        <td>03 jun 2021</td>
+                    </tr>
+                    <tr>
+                        <td>Free</td>
+                        <td>USD 0</td>
+                        <td>03 Feb 2021</td>
+                        <td>03 jun 2021</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row my-5 justify-content-between border-bottom">
+        <div>
+            <h3 class="border-after-class mb-4">SUBSCRIPTION</h3>
+        </div>
+        <div>
+            <a class="cancel-subscription">Cancel Subscription</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 p-0">
+            <div class="subscription-table">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Package Name</th>
+                            <th>Left Days</th>
+                            <th>Date</th>
+                            <th>Valid Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Free</td>
+                            <td>119 days</td>
+                            <td>03 Feb 2021</td>
+                            <td>03 Jun 2021</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

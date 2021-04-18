@@ -1,0 +1,122 @@
+<div class="container">
+    <div class="row">
+        <div class="section-heading mb-5">
+            <h4><span>
+                  My RFQ's
+              </span>
+            </h4>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <!-- p-0 -->
+            <form action="" class="filter-form">
+                <div class="row mt-4">
+                    <div class="col-2">
+                        <label for="">Date</label>
+                    </div>
+                    <div class="col-10">
+                        <div class="input-group">
+                            <input class="form-control py-4" placeholder="Select a date" angular-mydatepicker name="myDate" [options]="myOptions" #dp="angular-mydatepicker" />
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-secondary" (click)="dp.clearDate()">
+                                <i class="fa fa-close"></i>
+                              </button>
+                            </div>
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-secondary" (click)="dp.toggleCalendar()">
+                                <i class="fa fa-calendar"></i>
+                              </button>
+                            </div>
+                        </div>
+                        <!-- <div class="w-100 calender-icon-add">
+                            <input type="text" class="pl-4 form-control" placeholder="(Select issue Dates)">
+                            <span><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-2">
+                        <label for="">Search for</label>
+                    </div>
+                    <div class="col-10">
+                        <ng-select [clearable]="false" [virtualScroll]="true" class="w-100" placeholder="Search order by Parts">
+                            <!-- [ngClass]="{ 'is-invalid': sub && f.state.errors }"  -->
+                            <ng-option value="{{list.id}}" *ngFor="let list of stateList">
+                                {{list.state_name}}
+                            </ng-option>
+                        </ng-select>
+                    </div>
+                </div>
+                <div class="row mt-4 justify-content-end">
+                    <div class="col-10 text-center">
+                        <button type="submit" class="filter-button mr-2">Apply</button>
+                        <!-- <button type="button" class="filter-button">Clear Filters</button> -->
+                    </div>
+                </div>
+            </form>
+            <!-- <div class="accordion-heding d-flex justify-content-between">
+                <h4 class="m-0">RFQ's</h4>
+                <p class="m-0"><i class="fa fa-angle-down" aria-hidden="true"></i></p>
+            </div>
+            <div class="accordion-body">
+               
+            </div> -->
+        </div>
+    </div>
+</div>
+<div class="container section-padding">
+    <div class="row">
+        <div class="col-12 filter-table">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>RFQ No.</th>
+                        <th>Part No.</th>
+                        <th>Company Name</th>
+                        <th>Quantity/UoM</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

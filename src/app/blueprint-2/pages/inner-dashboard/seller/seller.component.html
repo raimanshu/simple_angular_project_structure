@@ -1,0 +1,252 @@
+<app-loder-one *ngIf="loader"></app-loder-one>
+<div class="container">
+    <div class="row">
+        <div class="section-heading mb-5">
+            <h4><span>
+                {{hasCompany == true?'COMPANY DETAILS':'BECOME A SELLER'}}
+            </span>
+            </h4>
+        </div>
+    </div>
+</div>
+<div class="form selller" *ngIf="option">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="compony-registration-form w-100">
+                    <form [formGroup]="form" (ngSubmit)="onBecomeSellerFormSubmit()">
+                        <div class="compony-table">
+                            <div class="compony-table-first">
+                                <label for="">Compony Name<span>*</span></label>
+                            </div>
+                            <div class="compony-table-second">
+                                <input type="text" formControlName="company_name" class="py-4 form-control" [ngClass]="{ 'is-invalid': (sub || f.company_name.touched) && f.company_name.errors }">
+                                <div *ngIf="(sub || f.company_name.touched) && f.company_name.errors" class="invalid-feedback">
+                                    <div *ngIf="f.company_name.errors.required">Company name is required</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="compony-table">
+                            <div class="compony-table-first">
+                                <label for="">Type of Company<span>*</span></label>
+                            </div>
+                            <div class="compony-table-second">
+                                <input type="text" formControlName="type_of_company" class="py-4 form-control" [ngClass]="{ 'is-invalid': (sub || f.type_of_company.touched) && f.type_of_company.errors }">
+                                <div *ngIf="(sub || f.type_of_company.touched) && f.type_of_company.errors" class="invalid-feedback">
+                                    <div *ngIf="f.type_of_company.errors.required">Type of company is required</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="compony-table">
+                            <div class="compony-table-first">
+                                <label for="">Website</label>
+                            </div>
+                            <div class="compony-table-second">
+                                <input type="text" formControlName="website" class="py-4 form-control">
+                            </div>
+                        </div>
+                        <div class="compony-table">
+                            <div class="compony-table-first">
+                                <label for="">Phone</label>
+                            </div>
+                            <div class="compony-table-second">
+                                <input type="text" maxlength="10" formControlName="phone" class="py-4 form-control" maxlength="10">
+                            </div>
+                        </div>
+                        <div class="compony-table">
+                            <div class="compony-table-first">
+                                <label for="">Address<span>*</span></label>
+                            </div>
+                            <div class="compony-table-second">
+                                <textarea type="text" formControlName="company_address" class="form-control" rows="4" [ngClass]="{ 'is-invalid': (sub || f.company_address.touched) && f.company_address.errors }"></textarea>
+                                <div *ngIf="(sub || f.company_address.touched) && f.company_address.errors" class="invalid-feedback">
+                                    <div *ngIf="f.company_address.errors.required">Address is required</div>
+                                </div>
+                                <!-- <input type="text" class="py-4 form-control"> -->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-6">
+                                <div class="compony-table">
+                                    <div class="compony-table-first compony-table-third">
+                                        <label for="">Country</label>
+                                    </div>
+                                    <div class="compony-table-second compony-table-four">
+
+                                        <ng-select [clearable]="false" [virtualScroll]="true" formControlName="country" (change)="countrySelected()">
+                                            <!-- [ngClass]="{ 'is-invalid': sub && f.state.errors }"  -->
+                                            <!-- <ng-option value="" disabled selected>Select Country</ng-option> -->
+                                            <ng-option value="{{list.id}}" *ngFor="let list of countryList">
+                                                {{list.country_name}}
+                                            </ng-option>
+                                        </ng-select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6">
+                                <div class="compony-table">
+                                    <div class="compony-table-first compony-table-third">
+                                        <label for="">State</label>
+                                    </div>
+                                    <div class="compony-table-second compony-table-four">
+                                        <ng-select [clearable]="false" [virtualScroll]="true" formControlName="state" (change)="stateSelected()">
+                                            <!-- [ngClass]="{ 'is-invalid': sub && f.state.errors }"  -->
+                                            <ng-option value="{{list.country_id}}" *ngFor="let list of stateList">
+                                                {{list.name}}
+                                            </ng-option>
+                                        </ng-select>
+                                        <!-- <div *ngIf="sub && f.state.errors" class="invalid-feedback">
+                        <div *ngIf="f.state.errors.required">Select state</div>
+                    </div> -->
+                                        <!-- <select placeholder="Aircraft parts">
+                        <option value="Name 1">Name 1</option>
+                        <option value="Name 2">Name 1</option>
+                        <option value="Name 3">Name 1</option>
+                    </select> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-6">
+                                <div class="compony-table">
+                                    <div class="compony-table-first compony-table-third">
+                                        <label for="">Zip Code</label>
+                                    </div>
+                                    <div class="compony-table-second compony-table-four">
+                                        <input type="text" formControlName="zipcode" class="py-4 form-control" maxlength="6">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6">
+                                <div class="compony-table">
+                                    <div class="compony-table-first compony-table-third">
+                                        <label for="">City</label>
+                                    </div>
+                                    <div class="compony-table-second compony-table-four">
+                                        <!-- <input type="text" formControlName="city" class="py-4 form-control"> -->
+                                        <ng-select [clearable]="false" [virtualScroll]="true" formControlName="city">
+                                            <!-- [ngClass]="{ 'is-invalid': sub && f.state.errors }"  -->
+                                            <ng-option value="{{list.id}}" *ngFor="let list of cityList">
+                                                {{list.name}}
+                                            </ng-option>
+                                        </ng-select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="W-100 mt-5 text-center">
+                            <button class="compony-button">{{hasCompany ? 'Edit' : 'Register'}} Your Company</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- <div class="col-12 p-0">
+            <div class="accordion-heding d-flex justify-content-between">
+                <h4 class="m-0">Company Registration</h4>
+                <p class="m-0"><i class="fa fa-angle-down" aria-hidden="true"></i></p>
+            </div>
+            <div class="accordion-body">
+                <div class="row">
+                    
+                </div>
+            </div>
+        </div> -->
+        </div>
+    </div>
+</div>
+<div class="conpany-details-one" *ngIf="!option">
+    <!-- <div class="container">
+        <div class="row">
+            <div class="section-heading mb-5">
+                <h4><span>
+                    COMPANY DETAILS
+                </span>
+                </h4>
+            </div>
+        </div>
+    </div> -->
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 col-sm-12 col-md-10">
+                <div class="componay-details">
+                    <div class="componay-edit text-right">
+                        <a class="edit" (click)="editdetails()">Edit <i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="componay-table">
+                        <div class="componay-heading">
+                            <h4 class="mb-0">Componay Name</h4>
+                        </div>
+                        <div class="componay-paragraph">
+                            <p class="mb-0"><span>{{companyDetails?.company_name}}</span></p>
+                        </div>
+                    </div>
+                    <div class="componay-table">
+                        <div class="componay-heading">
+                            <h4 class="mb-0">Website</h4>
+                        </div>
+                        <div class="componay-paragraph">
+                            <p class="mb-0"><span>{{companyDetails?.website}}</span></p>
+                        </div>
+                    </div>
+                    <div class="componay-table">
+                        <div class="componay-heading">
+                            <h4 class="mb-0">Type of company</h4>
+                        </div>
+                        <div class="componay-paragraph">
+                            <p class="mb-0"><span>{{companyDetails?.type_of_company}}</span></p>
+                        </div>
+                    </div>
+                    <div class="componay-table">
+                        <div class="componay-heading">
+                            <h4 class="mb-0">Phone</h4>
+                        </div>
+                        <div class="componay-paragraph">
+                            <p class="mb-0"><span>{{companyDetails?.phone}}</span></p>
+                        </div>
+                    </div>
+                    <div class="componay-table">
+                        <div class="componay-heading">
+                            <h4 class="mb-0">Country</h4>
+                        </div>
+                        <div class="componay-paragraph">
+                            <p class="mb-0"><span>{{namecountry}}</span></p>
+                        </div>
+                    </div>
+                    <div class="componay-table">
+                        <div class="componay-heading">
+                            <h4 class="mb-0">State</h4>
+                        </div>
+                        <div class="componay-paragraph">
+                            <p class="mb-0"><span>{{companyDetails?.state}}</span></p>
+                        </div>
+                    </div>
+                    <div class="componay-table">
+                        <div class="componay-heading">
+                            <h4 class="mb-0">city</h4>
+                        </div>
+                        <div class="componay-paragraph">
+                            <p class="mb-0"><span>{{companyDetails?.city}}</span></p>
+                        </div>
+                    </div>
+                    <div class="componay-table">
+                        <div class="componay-heading">
+                            <h4 class="mb-0">Zipcode</h4>
+                        </div>
+                        <div class="componay-paragraph">
+                            <p class="mb-0"><span>{{companyDetails?.zipcode}}</span></p>
+                        </div>
+                    </div>
+                    <div class="componay-table">
+                        <div class="componay-heading">
+                            <h4 class="mb-0">Company Address</h4>
+                        </div>
+                        <div class="componay-paragraph">
+                            <p class="mb-0"><span>{{companyDetails?.company_address}}</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

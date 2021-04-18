@@ -1,0 +1,1 @@
+'This folder contain guards created by ng g guard <guard_name>. It restricts routing based on conditions.  Conditions - CanActive, CanActivateChild, CanDeactivate, CanLoad'

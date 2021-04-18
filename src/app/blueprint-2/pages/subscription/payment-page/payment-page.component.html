@@ -1,0 +1,102 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="paymeent-box">
+                <div class="heading-payment text-center">
+                    <span>Payment Details</span>
+                </div>
+                <div class="row">
+                    <div class="heading-two w-100 text-center pb-4">
+                        <h4>Personal Information</h4>
+                        <span><i class="fa fa-plane" aria-hidden="true"></i></span>
+                    </div>
+                    <form class="w-100 px-3" [formGroup]="paymentCardForm" (ngSubmit)="onSubmitForm()">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label for="">User Name</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label for="">Enter Phone Number</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label for="">Subscription Plan</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label for="">Duration</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="heading-two w-100 text-center pb-4">
+                                <h4>Card Details</h4>
+                                <span><i class="fa fa-plane" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for="">Name on Card</label>
+                                    <input type="text" class="form-control" formControlName="cardholderName" [ngClass]="{ 'is-invalid': (sub || f.cardholderName.touched) && f.cardholderName.errors }">
+                                    <div *ngIf="(sub || f.cardholderName.touched) && f.cardholderName.errors" class="invalid-feedback">
+                                        <div *ngIf="f.cardholderName.errors.required">Card holder's name is required</div>
+                                        <!-- <div *ngIf="f.cardholderName.errors.minlength">min lenght 1</div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for="">Card Number</label>
+                                    <input type="text" class="form-control" placeholder="Enter your 16-digit card number" credit-card formControlName="cardNumber" [ngClass]="{ 'is-invalid': (sub || f.cardNumber.touched) && f.cardNumber.errors }">
+                                    <div *ngIf="(sub || f.cardNumber.touched) && f.cardNumber.errors" class="invalid-feedback">
+                                        <div *ngIf="f.cardNumber.errors.required">Your Card is required!</div>
+                                        <div *ngIf="f.cardNumber.errors.minlength">min lenght 1</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-4">
+                                <div class="form-group">
+                                    <label for="">CVV</label>
+                                    <input type="password" class="form-control" placeholder="****" cvv-card>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-4">
+                                <div class="form-group">
+                                    <label for="">Expiry Month</label>
+                                    <input type="text" class="form-control" placeholder="MM" date-card>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-4">
+                                <div class="form-group">
+                                    <label for="">Expiry Year</label>
+                                    <input type="text" class="form-control" placeholder="YY" date-card>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <button class="btn btn-success ml-3"> Add your card & Pay </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

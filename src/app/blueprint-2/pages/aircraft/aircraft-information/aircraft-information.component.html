@@ -1,0 +1,280 @@
+<div class="w-100">
+    <div class="images-slider-threee">
+        <img src="./assets/images/slider.jpg" alt="">
+        <div class="slider-three-para">
+            <div class="container-fuild">
+                <h4>Fully automate your Aircraft parts sourcing</h4>
+            </div>
+            <div class="container">
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container section-padding">
+    <div class="row">
+        <div class="col-12 p-0">
+            <div class="accordion-heding d-flex justify-content-between">
+                <h4 class="m-0">Enter Aircraft Information</h4>
+                <p class="m-0"><i class="fa fa-angle-down" aria-hidden="true"></i></p>
+            </div>
+            <div class="accordion-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="aircraft-form">
+                            <form>
+                                <div class="compony-table">
+                                    <div class="compony-table-first">
+                                        <label for="">Category<span>*</span></label>
+                                    </div>
+                                    <div class="compony-table-second">
+                                        <ng-select [clearable]="false" [virtualScroll]="true">
+                                            <ng-option value="" disabled selected>Type or Select</ng-option>
+                                            <ng-option value="{{list.id}}" *ngFor="let list of stateList">
+                                                {{list.state_name}}
+                                            </ng-option>
+                                        </ng-select>
+                                    </div>
+                                </div>
+                                <div class="compony-table">
+                                    <div class="compony-table-first">
+                                        <label for="">Serial Number / VIN</label>
+                                    </div>
+                                    <div class="compony-table-second">
+                                        <input type="text" class="py-4 form-control">
+                                    </div>
+                                </div>
+                                <div class="compony-table">
+                                    <div class="compony-table-first">
+                                        <label for="">Manufacturer<span>*</span></label>
+                                    </div>
+                                    <div class="compony-table-second">
+                                        <input type="text" class="py-4 form-control">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-sm-12 col-md-6">
+                                        <div class="compony-table">
+                                            <div class="compony-table-first compony-table-third">
+                                                <label for="">Model<span>*</span></label>
+                                            </div>
+                                            <div class="compony-table-second compony-table-four">
+                                                <input type="text" class="py-4 form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-md-6">
+                                        <div class="compony-table">
+                                            <div class="compony-table-first compony-table-third">
+                                                <label for="">Year</label>
+                                            </div>
+                                            <div class="compony-table-second compony-table-four">
+                                                <ng-select [clearable]="false" [virtualScroll]="true">
+                                                    <ng-option value="" disabled selected>Type or Select</ng-option>
+                                                    <ng-option value="{{list.id}}" *ngFor="let list of stateList">
+                                                        {{list.state_name}}
+                                                    </ng-option>
+                                                </ng-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="compony-table">
+                                    <div class="compony-table-first">
+                                        <label for="">Condition</label>
+                                    </div>
+                                    <div class="compony-table-second">
+                                        <div class="form-group">
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="radio1">
+                                                    <input type="radio" class="form-check-input" id="radio1"
+                                                        value="1">New
+                                                </label>
+                                            </div>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="radio2">
+                                                    <input type="radio" class="form-check-input" id="radio2"
+                                                        value="0">Used
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="compony-table">
+                                    <div class="compony-table-first">
+                                        <label for="">Address</label>
+                                    </div>
+                                    <div class="compony-table-second">
+                                        <textarea type="text" class="form-control" rows="7"></textarea>
+                                        <!-- <input type="text" class="py-4 form-control"> -->
+                                    </div>
+                                </div>
+                                <div class="compony-table">
+                                    <div class="compony-table-five">
+                                        <label for="">Price</label>
+                                        <div class="form-check-inline">
+                                            <label class="form-check-label" for="radio3">
+                                                <input type="checkbox" class="form-check-input ml-3 mr-2" id="radio3"
+                                                    value="for sale">For Sale
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="compony-table-six">
+                                        <input type="text" class="py-4 form-control">
+                                    </div>
+                                    <div class="compony-table-seven">
+                                        <div class="compony-table-eight">
+                                            <ng-select [clearable]="false" [virtualScroll]="true">
+                                                <ng-option value="{{list.id}}" *ngFor="let list of pricelist">
+                                                    {{list.name}}
+                                                </ng-option>
+                                            </ng-select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pargraph-text">
+                                    <p><span>Tip:</span> For best results, always include an asking price.</p>
+                                </div>
+                                <div class="other-price-box">
+                                    <div class="menu-other-price">
+                                        <h4 class="mb-0">Other Pricing Options <span><i class="fa fa-angle-down"
+                                                    aria-hidden="true"></i></span></h4>
+                                    </div>
+                                    <ul class="firstmenuclass">
+                                        <li><a>Leasing <span><i class="fa fa-angle-down"
+                                                        aria-hidden="true"></i></span></a>
+                                            <ul>
+                                                <li>
+                                                    <div class="monthly-price-one">
+                                                        <label for="">Monthly Price:</label>
+                                                        <div class="form-check-inline">
+                                                            <label class="form-check-label" for="radio4">
+                                                                <input type="checkbox"
+                                                                    class="form-check-input ml-3 mr-2" id="radio4"
+                                                                    value="for sale">For Sale
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="monthly-price-two">
+                                                        <input type="text" class="py-4 form-control">
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a>Fractional Ownership <span><i class="fa fa-angle-down"
+                                                        aria-hidden="true"></i></span></a>
+                                            <ul>
+                                                <li>demo</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="W-100 mt-5 text-center">
+                                    <button class="compony-button">Done With Aircraft Information</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12 p-0">
+            <div class="accordion-heding d-flex justify-content-between">
+                <h4 class="m-0">Photos and Videos</h4>
+                <p class="m-0"><i class="fa fa-angle-down" aria-hidden="true"></i></p>
+            </div>
+            <div class="accordion-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="aircraft-form photsandvideos">
+                            <div class="photovideo-heading">
+                                <h4 class="mt-4">Please send photos in .jpg format only.</h4>
+                                <h4 class="mt-4">Accepted Video Formats: asf,avi,flv,ismv,m4v,mov,mp4,mpeg,mpg,qt,wmv,3gp,3g2,mts,m2ts
+                                </h4>
+                                <p class="mt-5"><span>Important Note:</span> Do not submit a photograph unless you own the right to use, reproduce, and distribute the photograph. Photographs bearing a watermark or other copyright notice in favor of a third party cannot
+                                    be accepted and will be deleted from your listing.</p>
+                            </div>
+                            <form action="">
+                                <div class="file-upload">
+                                    <div class="file-upload-header">
+
+                                    </div>
+                                    <div class="file-upload-fotter">
+
+                                    </div>
+                                </div>
+                                <div class="photo-upload-condition">
+                                    <p><span>Tip:</span> Choose your listing's main photo first. Be sure this photo captures the entirety of your aircraft.</p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12 p-0">
+            <div class="accordion-heding d-flex justify-content-between">
+                <h4 class="m-0">Contact Information</h4>
+                <p class="m-0"><i class="fa fa-angle-down" aria-hidden="true"></i></p>
+            </div>
+            <div class="accordion-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="aircraft-form contactinfo">
+                            <form>
+                                <div class="compony-table">
+                                    <div class="compony-table-first">
+                                        <label for="">Email Address<span>*</span></label>
+                                    </div>
+                                    <div class="compony-table-second">
+                                        <div class="contact-email">
+                                            <input type="text" class="py-4 form-control">
+                                        </div>
+                                        <div class="contact-checkbox">
+                                            <label class="form-check-label" for="radio5">
+                                                <input type="checkbox" class="form-check-input mr-2" id="radio5"
+                                                    value="true">Please send me Weekly Updates and other occasional news
+                                                from PartsandPlanes.
+                                            </label>
+                                        </div>
+                                        <div class="facebook-conect-button">
+                                            <button class="facebook"><i class="fa fa-facebook"
+                                                    aria-hidden="true"></i>Log In With Facebook</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="compony-table">
+                                    <div class="compony-table-first">
+                                        <label for="">Name <span>*</span></label>
+                                    </div>
+                                    <div class="compony-table-second">
+                                        <div class="row">
+                                            <div class="col-12 col-sm-12 col-md-6">
+                                                <input type="text" class="py-4 form-control" placeholder="First Name">
+                                            </div>
+                                            <div class="col-12 col-sm-12 col-md-6">
+                                                <input type="text" class="py-4 form-control" placeholder="Last Name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="compony-table">
+                                    <div class="compony-table-first">
+                                        <label for="">Phone <span>*</span></label>
+                                    </div>
+                                    <div class="compony-table-second">
+                                        <input type="text" class="py-4 form-control">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

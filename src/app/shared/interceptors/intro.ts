@@ -1,0 +1,1 @@
+'This folder contains interceptors created using ng g interceptor <interceptor_name>. It checks each API success or error response. Examples - auth.interceptor.ts, error.interceptor.ts, etc'

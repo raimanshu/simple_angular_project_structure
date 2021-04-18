@@ -1,0 +1,1 @@
+'This folder contains services created using ng g service <service_name>. It provide API responsesto components Examples - common.service.ts, localStorage.service.ts, etc'

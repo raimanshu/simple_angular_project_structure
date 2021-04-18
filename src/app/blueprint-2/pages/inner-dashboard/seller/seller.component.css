@@ -1,0 +1,40 @@
+.accordion-body {
+    display: none;
+}
+
+.componay-details {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px;
+    box-shadow: -1px 0px 5px #a9a9a9dd;
+}
+
+.componay-details .componay-table {
+    display: table;
+    width: 100%;
+}
+
+.componay-details .componay-heading {
+    display: table-cell;
+    width: 40%;
+    vertical-align: bottom;
+}
+
+.componay-details .componay-paragraph {
+    display: table-cell;
+    width: 60%;
+    vertical-align: bottom;
+    color: var(--blue);
+    font-size: 22px;
+}
+
+.componay-edit .edit {
+    color: #0090ff;
+    font-size: 24px;
+    font-family: 'Poppins regular';
+    cursor: pointer;
+}
+
+.compony-table-first label span {
+    color: #eb7977;
+}

@@ -1,0 +1,8 @@
+.accordion-body {
+    display: none;
+}
+
+label {
+    font-size: 20px;
+    color: #525253;
+}
